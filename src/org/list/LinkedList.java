@@ -92,4 +92,13 @@ public class LinkedList {
         }
     }
 
+    public void insertAfter(int index, int value) {
+        Node before = get(index);
+        Node after = get(index + 1);
+        Node newNode = new Node(value);
+
+        before.next = newNode;
+        newNode.next = after;
+        numOfElements++;
+    }
 }

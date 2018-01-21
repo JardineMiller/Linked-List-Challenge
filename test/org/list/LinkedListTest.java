@@ -119,5 +119,22 @@ public class LinkedListTest {
         assertEquals(3, list.count(5));
     }
 
+    @Test
+    public void canCountNumberOfValuesNegativeResult() {
+        list.insertToFront(5);
+        list.insertToFront(5);
+        list.insertToFront(5);
+        assertEquals(0, list.count(10));
+    }
+
+    @Test
+    public void canInsertAfter() {
+        list.insertToFront(5);
+        list.insertToFront(10);
+        list.insertToFront(20);
+        list.insertAfter(1, 15);
+        assertEquals(4, list.size());
+        assertEquals(15, list.get(2).value);
+    }
 
 }
