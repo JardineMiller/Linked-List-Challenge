@@ -7,7 +7,6 @@ import static junit.framework.TestCase.assertEquals;
 
 public class LinkedListTest {
     LinkedList list;
-    Node node;
 
     @Before
     public void before() {
@@ -103,6 +102,13 @@ public class LinkedListTest {
         list.remove(1);
         assertEquals(2, list.size());
         assertEquals(100, list.get(1).value);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void cantRemoveFromFirstPositionWithRemoveMethod() {
+        list.insertToEnd(5);
+        list.insertToEnd(100);
+        list.remove(0);
     }
 
     @Test

@@ -81,11 +81,15 @@ public class LinkedList {
     }
 
     public void remove(int index) {
-        Node before = get(index - 1);
-        Node after = get(index + 1);
+        if (index == 0) {
+            throw new NullPointerException("Use removeFromFront to remove the first item in a list");
+        } else {
+            Node before = get(index - 1);
+            Node after = get(index + 1);
 
-        before.next = after;
-        numOfElements--;
+            before.next = after;
+            numOfElements--;
+        }
     }
 
 }
