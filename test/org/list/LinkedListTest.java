@@ -73,6 +73,16 @@ public class LinkedListTest {
         assertEquals(15, list.get(1).value);
     }
 
+    @Test
+    public void canRemoveFromPosition() {
+        list.insertToEnd(5);
+        list.insertToEnd(15);
+        list.insertToEnd(100);
+        list.remove(1);
+        assertEquals(2, list.size());
+        assertEquals(100, list.get(1).value);
+
+    }
 
 
 }

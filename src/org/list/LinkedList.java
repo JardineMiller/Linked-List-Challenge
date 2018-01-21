@@ -64,4 +64,12 @@ public class LinkedList {
         numOfElements--;
     }
 
+    public void remove(int index) {
+        Node before = get(index - 1);
+        Node after = get(index + 1);
+
+        before.next = after;
+        numOfElements--;
+    }
+
 }
