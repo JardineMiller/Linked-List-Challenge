@@ -19,7 +19,11 @@ public class LinkedList {
     }
 
     public int getHead() {
-        return head.value;
+        if (numOfElements == 0) {
+            throw new NullPointerException("List is empty");
+        } else {
+            return head.value;
+        }
     }
 
     public void insertToFront(int i) {

@@ -19,9 +19,15 @@ public class LinkedListTest {
         assertEquals(0, list.size());
     }
 
+    @Test(expected = NullPointerException.class)
+    public void exceptionWhenTryingToGetHeadFromEmpty() {
+        list.getHead();
+    }
+
     @Test
     public void canGetHead() {
-        assertEquals(null, list.getHead());
+        list.insertToEnd(5);
+        assertEquals(5, list.getHead());
     }
 
     @Test
