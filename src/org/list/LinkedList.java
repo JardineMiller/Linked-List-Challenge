@@ -26,6 +26,18 @@ public class LinkedList {
         }
     }
 
+    public int count(int value) {
+        int counter = 0;
+        Node node = this.head;
+        for(int i = 0; i <= numOfElements - 1; i++){
+            if(node.value == value) {
+                counter++;
+            }
+            node = node.next;
+        }
+        return counter;
+    }
+
     public void insertToFront(int i) {
          Node newNode  = new Node(i);
          newNode.next = head;

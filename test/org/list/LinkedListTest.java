@@ -46,6 +46,22 @@ public class LinkedListTest {
         assertEquals(5, list.getHead());
     }
 
+    @Test(expected = NullPointerException.class)
+    public void ListSizeOneRemoveFromFront() {
+        list.insertToFront(5);
+        list.removeFromFront();
+        assertEquals(0, list.size());
+        list.getHead();
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void ListSizeOneRemoveFromEnd() {
+        list.insertToEnd(5);
+        list.removeFromEnd();
+        assertEquals(0, list.size());
+        list.getHead();
+    }
+
     @Test
     public void canGet() {
         list.insertToFront(5);
@@ -87,7 +103,14 @@ public class LinkedListTest {
         list.remove(1);
         assertEquals(2, list.size());
         assertEquals(100, list.get(1).value);
+    }
 
+    @Test
+    public void canCountNumberOfValues() {
+        list.insertToFront(5);
+        list.insertToFront(5);
+        list.insertToFront(5);
+        assertEquals(3, list.count(5));
     }
 
 
